@@ -16,5 +16,12 @@ public class CylinderController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         this.transform.position += new Vector3(horizontalInput*velocity,0,0);
+        if(this.transform.position.x>4)
+        {
+            this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z)
+        } else if (this.transform.position.x<-4)
+        {
+            this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z)
+        }
     }
 }
