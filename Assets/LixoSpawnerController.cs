@@ -19,18 +19,21 @@ public class LixoSpawnerController : MonoBehaviour
     public int points = 0;
     void Start()
     {
-        StartCoroutine (SpawnRoutine());
+        StartCoroutine(SpawnRoutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator SpawnRoutine()
     {
-        Instantiate(Lixo, new Vector3(Random.Range(-maximumX, maximumX), fixedY, fixedZ), Quaternion.identity);
-        yield return new WaitForSeconds(timer);
+        while (points < MaxPoints)
+        {
+            Instantiate(Lixo, new Vector3(Random.Range(-maximumX, maximumX), fixedY, fixedZ), Quaternion.identity);
+            yield return new WaitForSeconds(timer);
+        }
     }
 }

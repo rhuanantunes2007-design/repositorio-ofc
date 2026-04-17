@@ -6,19 +6,10 @@ public class DestroyLixo : MonoBehaviour
 {
     private void OnColisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag==("Lixo"))
+        if (collision.gameObject.CompareTag("Lixo"))
         {
             Destroy(collision.gameObject);
         }
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
